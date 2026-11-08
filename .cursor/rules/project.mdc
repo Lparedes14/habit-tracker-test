@@ -1,0 +1,48 @@
+---
+description: Project rules for StudyStreak
+alwaysApply: true
+---
+
+# StudyStreak: rules for every coding agent
+
+You work on one task file at a time from `tasks/`. Read `docs/PRD.md` and `docs/DESIGN.md` first.
+
+## Stack
+- Next.js 14 App Router + TypeScript
+- Tailwind CSS
+- @supabase/supabase-js
+
+## Folder layout
+- src/app/ for Next.js pages and layout
+- src/components/ for all React components
+- lib/ for Supabase client and query helpers
+- supabase/migrations/ for SQL schema
+- src/types/ for shared TypeScript definitions
+
+## Conventions
+- Use TypeScript with strict mode
+- All components are functional with proper props typing
+- Tailwind classes for all styling with mobile-first approach
+- Supabase queries always filter by auth.uid() for RLS
+- Never hardcode SUPABASE_URL or SUPABASE_ANON_KEY
+- Use date-fns for date handling
+- Component filenames are PascalCase
+- Export one primary component per file
+
+## Commands
+- install: `npm install`
+- dev: `npm run dev`
+- test: `npm test`
+- build: `npm run build`
+
+## Never
+- never commit secrets or env vars
+- never touch files outside the current task
+- never implement features listed in out_of_scope
+- never use localStorage for persistence
+- never create API routes
+- never add user accounts or login UI
+- never implement history beyond 7 days
+- Never commit secrets, API keys or `.env` files; read configuration from environment variable names.
+- Never change files outside the current task's scope.
+- Open one PR per task titled `[task-NNN] <title>` with `Part of #<issue number>` in the description.
